@@ -42,6 +42,9 @@ export const ContactsPage = props => {
      console.log("Adding duplicate name is not allowed");
    } else {
      props.addContact(name, phoneNum, email);
+     setName('')
+     setPhoneNum('')
+     setEmail('')
    }
   };
 

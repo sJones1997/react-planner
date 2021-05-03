@@ -3,22 +3,19 @@ import PropTypes from 'prop-types';
 
 export const Tile = props => {
 
-  const showProps = (props) => {
-    console.log(props)
-  }
-
-  showProps(props)
-
-  const objectValues = Object.values(props)[0];
+  const details = Object.values(props)[0];
+  const keys = Object.keys(details);
   return (
     <div className="tile-container">
-        {objectValues.map(e => (
-          <div key={e.name}>
-            <p className="title-title">{e.name}</p>
-            <p className="title">{e.phoneNumber}</p>
-            <p className="title">{e.email}</p>
-          </div>
-        ))}
+      {
+        keys.map((e, i) => {
+          if(i === 0){
+            return <p className="tile-title">{details[e]}</p>
+          } else {
+            return <p className="tile">{details[e]}</p>
+          }
+        })        
+      }
     </div>
   );
 };

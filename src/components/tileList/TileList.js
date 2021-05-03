@@ -6,7 +6,9 @@ export const TileList = props => {
   return (
     <div>
       {
-        <Tile object={props.data} />
+        props.data.map((e, i) => (
+            <Tile key={i} object={e} />          
+        ))
       }
     </div>
   );
