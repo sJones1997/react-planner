@@ -10,9 +10,9 @@ export const Tile = props => {
       {
         keys.map((e, i) => {
           if(i === 0){
-            return <p className="tile-title">{details[e]}</p>
+            return <p key={details[e]+"_"+i} className="tile-title">{details[e]}</p>
           } else {
-            return <p className="tile">{details[e]}</p>
+            return <p key={details[e]+"_"+i} className="tile">{details[e]}</p>
           }
         })        
       }

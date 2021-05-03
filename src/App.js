@@ -10,7 +10,7 @@ function App() {
   contacts and appointments 
   */
 
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([{name: 'Sean', phoneNumber: '01254', email: 'sean@email.com'}]);
   const [appointments, setAppointments] = useState([]);  
 
   const ROUTES = {

@@ -9,26 +9,31 @@ export const AppointmentsPage = props => {
   */
 
   const [title, setTitle] = useState('');
-  const handleTitleChange = (title) => {
-    setTitle(title);
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
   }
   const [contact, setContact] = useState('');
-  const handleContactChange = (contact) => {
-    setContact(title);
+  const handleContactChange = (e) => {
+    setContact(e.target.value);
   }  
   const [date, setDate] = useState('');
-  const handleDateChange = (date) => {
-    setDate(date)
+  const handleDateChange = (e) => {
+    setDate(e.target.value)
   }
   const [time, setTime] = useState('');
-  const handleTimeChange = (time) => {
-    setTime(time)
+  const handleTimeChange = (e) => {
+    setTime(e.target.value)
   }
   const handleSubmit = (e) => {
     e.preventDefault();
     /*
     Add contact info and clear data  
     */
+    props.addAppointment(title, contact, date, time)
+    setTitle('')
+    setContact('')
+    setDate('')
+    setTime('')
    
   };
 
@@ -45,7 +50,7 @@ export const AppointmentsPage = props => {
           date={date}
           setDate={handleDateChange}
           time={time}
-          setTime={setTime}
+          setTime={handleTimeChange}
           handleSubmit={handleSubmit}
           />
       </section>
